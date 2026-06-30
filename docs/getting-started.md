@@ -5,8 +5,8 @@ Five minutes from clone to a working query over your own files.
 ## 1. Get the code
 
 ```sh
-git clone https://github.com/Kumar123ips/prediction.git
-cd prediction
+git clone [https://github.com/AbhiLabs421/VEDA.git}
+cd VEDA
 ```
 
 That is the entire install for the **lexical mode** of the system. The
