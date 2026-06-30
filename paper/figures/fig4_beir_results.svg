@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="800" height="520" fill="#fafafa"/>
+<text x="400" y="28" text-anchor="middle" class="lbl-big">BEIR generalization — nDCG@10 across 3 domains</text>
+<text x="400" y="48" text-anchor="middle" class="lbl-sm">VEDA-X beats both BM25 and dense RAG (MiniLM) on 3/3 datasets, all p &lt; 0.01</text>
+<line x1="90" y1="410" x2="730" y2="410" class="grid"/>
+<text x="82" y="414" text-anchor="end" class="lbl-sm">0.0</text>
+<line x1="90" y1="348" x2="730" y2="348" class="grid"/>
+<text x="82" y="352" text-anchor="end" class="lbl-sm">0.2</text>
+<line x1="90" y1="286" x2="730" y2="286" class="grid"/>
+<text x="82" y="290" text-anchor="end" class="lbl-sm">0.4</text>
+<line x1="90" y1="224" x2="730" y2="224" class="grid"/>
+<text x="82" y="228" text-anchor="end" class="lbl-sm">0.6</text>
+<line x1="90" y1="162" x2="730" y2="162" class="grid"/>
+<text x="82" y="166" text-anchor="end" class="lbl-sm">0.8</text>
+<line x1="90" y1="100" x2="730" y2="100" class="grid"/>
+<text x="82" y="104" text-anchor="end" class="lbl-sm">1.0</text>
+<line x1="90" y1="90" x2="90" y2="410" class="axis"/>
+<line x1="90" y1="410" x2="730" y2="410" class="axis"/>
+<text x="40" y="255" text-anchor="middle" class="lbl-sm" transform="rotate(-90,40,255)">nDCG@10</text>
+<rect x="121" y="316" width="50" height="94" fill="url(#gblue)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="146" y="311" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.306</text>
+<rect x="174" y="311" width="50" height="99" fill="url(#gorange)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="199" y="306" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.320</text>
+<rect x="227" y="301" width="50" height="109" fill="url(#ggreen)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="252" y="296" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.352</text>
+<text x="196" y="432" text-anchor="middle" class="lbl-h">NFCorpus</text>
+<text x="196" y="452" text-anchor="middle" class="lbl-sm" fill="#2ca02c" font-weight="bold">+10.2% vs MiniLM</text>
+<text x="196" y="468" text-anchor="middle" class="lbl-tiny" fill="#666">p<0.0001</text>
+<rect x="334" y="152" width="50" height="258" fill="url(#gblue)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="359" y="147" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.835</text>
+<rect x="387" y="157" width="50" height="253" fill="url(#gorange)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="412" y="152" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.818</text>
+<rect x="440" y="145" width="50" height="265" fill="url(#ggreen)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="465" y="140" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.858</text>
+<text x="409" y="432" text-anchor="middle" class="lbl-h">SciFact</text>
+<text x="409" y="452" text-anchor="middle" class="lbl-sm" fill="#2ca02c" font-weight="bold">+4.9% vs MiniLM</text>
+<text x="409" y="468" text-anchor="middle" class="lbl-tiny" fill="#666">p=0.0004</text>
+<rect x="547" y="339" width="50" height="71" fill="url(#gblue)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="572" y="334" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.231</text>
+<rect x="600" y="296" width="50" height="114" fill="url(#gorange)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="625" y="291" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.369</text>
+<rect x="653" y="293" width="50" height="117" fill="url(#ggreen)" stroke="#333" stroke-width="0.8" rx="2"/>
+<text x="678" y="288" text-anchor="middle" class="lbl-tiny" font-weight="bold">0.380</text>
+<text x="622" y="432" text-anchor="middle" class="lbl-h">FiQA</text>
+<text x="622" y="452" text-anchor="middle" class="lbl-sm" fill="#2ca02c" font-weight="bold">+3.0% vs MiniLM</text>
+<text x="622" y="468" text-anchor="middle" class="lbl-tiny" fill="#666">p=0.0082</text>
+<rect x="500" y="105" width="14" height="14" fill="url(#gblue)" stroke="#333" stroke-width="0.5"/>
+<text x="518" y="117" class="lbl-sm">BM25</text>
+<rect x="580" y="105" width="14" height="14" fill="url(#gorange)" stroke="#333" stroke-width="0.5"/>
+<text x="598" y="117" class="lbl-sm">MiniLM (dense RAG)</text>
+<rect x="660" y="105" width="14" height="14" fill="url(#ggreen)" stroke="#333" stroke-width="0.5"/>
+<text x="678" y="117" class="lbl-sm">VEDA-X (ours)</text>
+<text x="400" y="490" text-anchor="middle" class="lbl-sm">Paired bootstrap over test queries.  Reproduce: python -m eval.generalize</text>
+<text x="400" y="506" text-anchor="middle" class="lbl-sm" fill="#666">Tuned on validation split, held-out test split reported.  Single CPU core, no GPU.</text>
+</svg>

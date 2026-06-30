@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="900" height="500" fill="#fafafa"/>
+<text x="450" y="32" text-anchor="middle" class="lbl-big">VEDA-X Retrieval Pipeline</text>
+<text x="450" y="52" text-anchor="middle" class="lbl-sm">4 stages, deterministic, no external embedding model</text>
+<rect x="40" y="100" width="120" height="50" rx="8" fill="#fff3cd" class="box"/>
+<text x="100" y="125" text-anchor="middle" class="lbl-h">Query q</text>
+<text x="100" y="142" text-anchor="middle" class="lbl-tiny">natural language</text>
+<rect x="200" y="80" width="160" height="90" rx="8" fill="url(#gblue)" class="box"/>
+<text x="280" y="105" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Stage 1</text>
+<text x="280" y="125" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Okapi BM25</text>
+<text x="280" y="143" text-anchor="middle" font-size="11" fill="#fff">k₁=0.9, b=0.4</text>
+<text x="280" y="158" text-anchor="middle" font-size="10" fill="#fff" opacity="0.85">→ top-50 candidates</text>
+<rect x="400" y="80" width="160" height="90" rx="8" fill="url(#gorange)" class="box"/>
+<text x="480" y="105" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Stage 2</text>
+<text x="480" y="125" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">HD expansion</text>
+<text x="480" y="143" text-anchor="middle" font-size="11" fill="#fff">cos(vₜ , q) ≥ 0</text>
+<text x="480" y="158" text-anchor="middle" font-size="10" fill="#fff" opacity="0.85">+10 terms, BM25 re-run</text>
+<rect x="600" y="80" width="160" height="90" rx="8" fill="url(#ggreen)" class="box"/>
+<text x="680" y="105" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Stage 3</text>
+<text x="680" y="125" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Intent rescore</text>
+<text x="680" y="143" text-anchor="middle" font-size="11" fill="#fff">subject × 3, filler × 1</text>
+<text x="680" y="158" text-anchor="middle" font-size="10" fill="#fff" opacity="0.85">subject-aware ranking</text>
+<rect x="380" y="240" width="200" height="90" rx="8" fill="url(#gpurple)" class="box"/>
+<text x="480" y="265" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Stage 4</text>
+<text x="480" y="285" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Adaptive cutoff</text>
+<text x="480" y="303" text-anchor="middle" font-size="11" fill="#fff">score-plateau detection</text>
+<text x="480" y="318" text-anchor="middle" font-size="10" fill="#fff" opacity="0.85">natural k, not fixed top-k</text>
+<rect x="700" y="240" width="160" height="90" rx="8" fill="#d4edda" class="box"/>
+<text x="780" y="270" text-anchor="middle" class="lbl-h">Result</text>
+<text x="780" y="290" text-anchor="middle" class="lbl-sm">k hits with</text>
+<text x="780" y="305" text-anchor="middle" class="lbl-sm">is_critical flag</text>
+<text x="780" y="320" text-anchor="middle" class="lbl-tiny">+ critical_title</text>
+<line x1="160" y1="125" x2="200" y2="125" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="360" y1="125" x2="400" y2="125" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="560" y1="125" x2="600" y2="125" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="680" y1="170" x2="580" y2="240" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="580" y1="285" x2="700" y2="285" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="400" width="820" height="80" rx="6" fill="#fff" class="box" stroke="#1f77b4" stroke-width="1.5"/>
+<text x="55" y="422" class="lbl-h">Hyperdimensional token vector:</text>
+<text x="55" y="445" class="mono">v_t  =  hash_to_sparse_vec( blake2b(t) )   ∈  {−1, 0, +1}²⁰⁴⁸</text>
+<text x="55" y="465" class="mono">phrase(s) =  ⊕ v_t   for t ∈ tokenize(s)   — 32 non-zero entries / 2048 dims</text>
+</svg>

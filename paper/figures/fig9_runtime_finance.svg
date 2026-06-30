@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" width="820" height="480" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="820" height="480" fill="#fafafa"/>
+<text x="410" y="28" text-anchor="middle" class="lbl-big">Runtime properties — vectorless retrieval, ~20 ms / query</text>
+<text x="410" y="48" text-anchor="middle" class="lbl-sm">Million-token corpus, 12 needle queries, single CPU core, pure Python stdlib</text>
+<rect x="50" y="90" width="350" height="340" fill="#fff" stroke="#1f77b4" stroke-width="1.4" rx="6"/>
+<text x="225" y="115" text-anchor="middle" class="lbl-h" fill="#08306b">Runtime: million-token benchmark</text>
+<text x="70" y="150" class="lbl-sm">Ingest throughput</text>
+<text x="380" y="150" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">~20,000 tokens/s</text>
+<line x1="65" y1="156" x2="385" y2="156" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="180" class="lbl-sm">Index size (in RAM)</text>
+<text x="380" y="180" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">~21 MB / 6.5 MB corpus</text>
+<line x1="65" y1="186" x2="385" y2="186" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="210" class="lbl-sm">Chunks indexed</text>
+<text x="380" y="210" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">19,236</text>
+<line x1="65" y1="216" x2="385" y2="216" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="240" class="lbl-sm">Query latency</text>
+<text x="380" y="240" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">~20 ms (CPU)</text>
+<line x1="65" y1="246" x2="385" y2="246" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="270" class="lbl-sm">Recall@5 (12 needles)</text>
+<text x="380" y="270" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">12 / 12 (100%)</text>
+<line x1="65" y1="276" x2="385" y2="276" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="300" class="lbl-sm">Embedding model</text>
+<text x="380" y="300" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">NONE (vectorless)</text>
+<line x1="65" y1="306" x2="385" y2="306" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="330" class="lbl-sm">GPU required</text>
+<text x="380" y="330" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">NO</text>
+<line x1="65" y1="336" x2="385" y2="336" stroke="#eee" stroke-width="0.5"/>
+<text x="70" y="360" class="lbl-sm">External deps</text>
+<text x="380" y="360" text-anchor="end" class="lbl-sm" font-weight="bold" fill="#2ca02c">stdlib only</text>
+<line x1="65" y1="366" x2="385" y2="366" stroke="#eee" stroke-width="0.5"/>
+<rect x="430" y="90" width="370" height="340" fill="#fff" stroke="#ff7f0e" stroke-width="1.4" rx="6"/>
+<text x="615" y="115" text-anchor="middle" class="lbl-h" fill="#08306b">FinanceBench — SEC 10-K retrieval</text>
+<text x="615" y="135" text-anchor="middle" class="lbl-sm">150 questions, PageIndex's own benchmark</text>
+<line x1="470" y1="380" x2="780" y2="380" class="grid"/>
+<text x="464" y="383" text-anchor="end" class="lbl-tiny">0.0</text>
+<line x1="470" y1="313" x2="780" y2="313" class="grid"/>
+<text x="464" y="316" text-anchor="end" class="lbl-tiny">0.1</text>
+<line x1="470" y1="245" x2="780" y2="245" class="grid"/>
+<text x="464" y="248" text-anchor="end" class="lbl-tiny">0.2</text>
+<line x1="470" y1="178" x2="780" y2="178" class="grid"/>
+<text x="464" y="181" text-anchor="end" class="lbl-tiny">0.3</text>
+<line x1="470" y1="110" x2="780" y2="110" class="grid"/>
+<text x="464" y="113" text-anchor="end" class="lbl-tiny">0.4</text>
+<line x1="470" y1="110" x2="470" y2="380" class="axis"/>
+<line x1="470" y1="380" x2="780" y2="380" class="axis"/>
+<rect x="490" y="304" width="18" height="76" fill="url(#gblue)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="499" y="300" text-anchor="middle" font-size="8" font-weight="bold">0.113</text>
+<rect x="510" y="281" width="18" height="99" fill="url(#gorange)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="519" y="277" text-anchor="middle" font-size="8" font-weight="bold">0.147</text>
+<rect x="530" y="277" width="18" height="103" fill="url(#ggreen)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="539" y="273" text-anchor="middle" font-size="8" font-weight="bold">0.153</text>
+<text x="513" y="396" text-anchor="middle" class="lbl-sm" font-weight="bold">R@1</text>
+<rect x="590" y="254" width="18" height="126" fill="url(#gblue)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="599" y="250" text-anchor="middle" font-size="8" font-weight="bold">0.187</text>
+<rect x="610" y="218" width="18" height="162" fill="url(#gorange)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="619" y="214" text-anchor="middle" font-size="8" font-weight="bold">0.240</text>
+<rect x="630" y="200" width="18" height="180" fill="url(#ggreen)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="639" y="196" text-anchor="middle" font-size="8" font-weight="bold">0.267</text>
+<text x="613" y="396" text-anchor="middle" class="lbl-sm" font-weight="bold">R@3</text>
+<rect x="690" y="241" width="18" height="139" fill="url(#gblue)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="699" y="237" text-anchor="middle" font-size="8" font-weight="bold">0.207</text>
+<rect x="710" y="169" width="18" height="211" fill="url(#gorange)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="719" y="165" text-anchor="middle" font-size="8" font-weight="bold">0.313</text>
+<rect x="730" y="165" width="18" height="215" fill="url(#ggreen)" stroke="#333" stroke-width="0.5" rx="1"/>
+<text x="739" y="161" text-anchor="middle" font-size="8" font-weight="bold">0.320</text>
+<text x="713" y="396" text-anchor="middle" class="lbl-sm" font-weight="bold">R@5</text>
+<text x="615" y="405" text-anchor="middle" class="lbl-sm">VEDA-X wins R@1 / R@3 / R@5 on PageIndex's home turf — no LLM in the loop.</text>
+<text x="410" y="460" text-anchor="middle" class="lbl-sm" fill="#666">Reproduce: python bench.py  (million-token)  ·  python eval/financebench.py</text>
+</svg>

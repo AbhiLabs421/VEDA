@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+
+# runtime artifacts
+vedax_data.db
+uploaded_docs/
+sop_docs/
+config.yaml

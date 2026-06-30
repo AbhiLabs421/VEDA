@@ -1,0 +1,120 @@
+# ==================================================================
+#  VEDAX configuration  ·  copy this to ./config.yaml and edit
+# ==================================================================
+#
+# Why a YAML file (not env vars)?
+#   * a single source of truth that lives in version control
+#   * audit-friendly: changes are git-diffable
+#   * structured: nested guardrail rules don't fit in env vars
+#
+# The vedax_config.py loader is a tiny stdlib-only YAML parser — no
+# PyYAML required.
+
+# ────────────  Keycloak / LDAP authentication  ──────────────────
+keycloak:
+  url: "https://keycloak.xyz.net"
+  realm: "your realm name"
+  client_id: "your client id "
+  verify_tls: true
+  # Roles inside Keycloak that automatically map to local roles on
+  # the very first login.  Anyone NOT in these groups lands as
+  # 'pending' and a superuser must approve before they can do
+  # anything.
+  superuser_keycloak_roles:
+    - "vedax-superuser"
+  admin_keycloak_roles:
+    - "vedax-admin"
+
+# ────────────  Documents  ────────────────────────────────────────
+documents:
+  # Folder that is auto-fetched on server startup and on every
+  # admin-triggered rescan.  Drop your SOPs here.
+  auto_fetch_dir: "./sop_docs"
+  # COMPLIANCE-CRITICAL folder.  Every file dropped here is indexed
+  # as a SINGLE atomic chunk — partial retrieval is impossible (you
+  # can never get Step 2 without Step 1 and Step 3).  Use for
+  # incident-response runbooks, settlement-rollback SOPs, KYC
+  # red-flag lists, anything where a missing step is a regulatory
+  # incident.  Inline [[CRITICAL: title]]...[[/CRITICAL]] markers
+  # inside ordinary docs get the same protection.
+  # See docs/critical-blocks.md for the format spec.
+  critical_fetch_dir: "./critical_sops"
+  # Where uploaded files land (admin / superuser uploads via UI).
+  upload_dir: "./uploaded_docs"
+  # Categories the admin can pick when uploading (free-text allowed too).
+  categories:
+    - "HR"
+    - "Finance"
+    - "Compliance"
+    - "IT"
+    - "Admin"
+    - "General"
+  # Auto-categorise by file path (case-insensitive substring).  If a
+  # file's path matches a rule the chosen category is applied
+  # automatically — no manual tagging needed for folder-based
+  # workflows.  First match wins.
+  auto_category_rules:
+    - match: "hr_"
+      category: "HR"
+    - match: "finance_"
+      category: "Finance"
+    - match: "compliance_"
+      category: "Compliance"
+
+# ────────────  Retrieval  ────────────────────────────────────────
+retrieval:
+  top_k_max: 10
+  chunk_tokens: 120
+  overlap_tokens: 20
+  abstain_threshold: 0.30
+  use_dense: false
+
+# ────────────  LLM gateway (optional)  ──────────────────────────
+llm:
+  url: "your ollama url"
+  model: "gpt-oss:20b"
+  api: "ollama"
+  token: null
+
+# ────────────  Guardrails  ──────────────────────────────────────
+guardrails:
+  enabled: true
+  # Anything below blocks the query BEFORE retrieval (input layer).
+  input:
+    block_prompt_injection: true
+    block_authority_impersonation: true
+    block_pii_in_query: true        # mask PII before logging
+    block_sql_injection: true
+    block_jailbreak: true
+  # Output filtering after the LLM has answered.
+  output:
+    mask_pii_in_answer: true
+    block_profanity: true
+  # Per-role policy overrides (more permissive for higher roles).
+  role_policy:
+    user:
+      max_query_length: 500
+      can_query_categories: ["HR", "Finance", "Compliance", "General"]
+      trip_wire_violations: 3           # auto-revoke after N hits
+      trip_wire_window_minutes: 10
+    admin:
+      max_query_length: 2000
+      can_query_categories: "*"
+      trip_wire_violations: 10
+      trip_wire_window_minutes: 60
+    superuser:
+      max_query_length: 5000
+      can_query_categories: "*"
+      trip_wire_violations: 0           # superuser is never auto-revoked
+
+# ────────────  Retention (keeps the SQLite DB bounded)  ──────────
+retention:
+  # Audit logs, guardrail events and question-counts older than this
+  # are purged daily (and once at startup).  An always-on server's DB
+  # therefore stays roughly constant in size instead of growing forever.
+  audit_days: 180
+
+# ────────────  Server  ──────────────────────────────────────────
+server:
+  host: "0.0.0.0"
+  port: 8000

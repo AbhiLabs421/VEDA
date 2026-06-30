@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 480" width="780" height="480" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="780" height="480" fill="#fafafa"/>
+<text x="390" y="28" text-anchor="middle" class="lbl-big">Adversarial guardrail — catch / mask / pass</text>
+<text x="390" y="48" text-anchor="middle" class="lbl-sm">All buckets: 100%.  Reproduce: python scripts/test_guardrail_adversarial.py</text>
+<line x1="60" y1="360" x2="730" y2="360" class="grid"/>
+<text x="52" y="364" text-anchor="end" class="lbl-sm">0%</text>
+<line x1="60" y1="298" x2="730" y2="298" class="grid"/>
+<text x="52" y="302" text-anchor="end" class="lbl-sm">25%</text>
+<line x1="60" y1="235" x2="730" y2="235" class="grid"/>
+<text x="52" y="239" text-anchor="end" class="lbl-sm">50%</text>
+<line x1="60" y1="173" x2="730" y2="173" class="grid"/>
+<text x="52" y="177" text-anchor="end" class="lbl-sm">75%</text>
+<line x1="60" y1="110" x2="730" y2="110" class="grid"/>
+<text x="52" y="114" text-anchor="end" class="lbl-sm">100%</text>
+<line x1="60" y1="100" x2="60" y2="360" class="axis"/>
+<line x1="60" y1="360" x2="730" y2="360" class="axis"/>
+<rect x="105" y="110" width="80" height="250" fill="url(#gred)" stroke="#333" stroke-width="0.8" rx="3"/>
+<text x="145" y="88" text-anchor="middle" class="lbl" font-weight="bold">18/18</text>
+<text x="145" y="104" text-anchor="middle" class="lbl-tiny">100%</text>
+<text x="145" y="380" text-anchor="middle" class="lbl-sm">Direct</text>
+<text x="145" y="394" text-anchor="middle" class="lbl-sm">attacks</text>
+<text x="145" y="410" text-anchor="middle" class="lbl-tiny" fill="#666">blocked</text>
+<rect x="230" y="110" width="80" height="250" fill="url(#gred)" stroke="#333" stroke-width="0.8" rx="3"/>
+<text x="270" y="88" text-anchor="middle" class="lbl" font-weight="bold">12/12</text>
+<text x="270" y="104" text-anchor="middle" class="lbl-tiny">100%</text>
+<text x="270" y="380" text-anchor="middle" class="lbl-sm">Sneaky</text>
+<text x="270" y="394" text-anchor="middle" class="lbl-sm">obfuscated</text>
+<text x="270" y="410" text-anchor="middle" class="lbl-tiny" fill="#666">blocked</text>
+<rect x="355" y="110" width="80" height="250" fill="url(#gpurple)" stroke="#333" stroke-width="0.8" rx="3"/>
+<text x="395" y="88" text-anchor="middle" class="lbl" font-weight="bold">14/14</text>
+<text x="395" y="104" text-anchor="middle" class="lbl-tiny">100%</text>
+<text x="395" y="380" text-anchor="middle" class="lbl-sm">Semantic</text>
+<text x="395" y="394" text-anchor="middle" class="lbl-sm">paraphrases</text>
+<text x="395" y="410" text-anchor="middle" class="lbl-tiny" fill="#666">blocked (L1.5)</text>
+<rect x="480" y="110" width="80" height="250" fill="url(#gorange)" stroke="#333" stroke-width="0.8" rx="3"/>
+<text x="520" y="88" text-anchor="middle" class="lbl" font-weight="bold">6/6</text>
+<text x="520" y="104" text-anchor="middle" class="lbl-tiny">100%</text>
+<text x="520" y="380" text-anchor="middle" class="lbl-sm">PII</text>
+<text x="520" y="410" text-anchor="middle" class="lbl-tiny" fill="#666">masked</text>
+<rect x="605" y="110" width="80" height="250" fill="url(#ggreen)" stroke="#333" stroke-width="0.8" rx="3"/>
+<text x="645" y="88" text-anchor="middle" class="lbl" font-weight="bold">15/15</text>
+<text x="645" y="104" text-anchor="middle" class="lbl-tiny">100%</text>
+<text x="645" y="380" text-anchor="middle" class="lbl-sm">Legitimate</text>
+<text x="645" y="394" text-anchor="middle" class="lbl-sm">queries</text>
+<text x="645" y="410" text-anchor="middle" class="lbl-tiny" fill="#666">passed (FP=0)</text>
+<text x="390" y="445" text-anchor="middle" class="lbl-sm">Red = direct/obfuscated blocked.  Purple = L1.5 semantic centroid blocks paraphrases regex cannot.</text>
+<text x="390" y="463" text-anchor="middle" class="lbl-sm">Orange = PII masked (user may legitimately ask about their own data).  Green = legit queries pass.</text>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 460" width="920" height="460" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="920" height="460" fill="#fafafa"/>
+<text x="460" y="28" text-anchor="middle" class="lbl-big">Atomic critical-block chunking — boundary expansion</text>
+<text x="460" y="48" text-anchor="middle" class="lbl-sm">Compliance-grade guarantee: partial step retrieval impossible by construction</text>
+<text x="40" y="100" class="lbl-h" fill="#d62728">✗  Naive windowed chunker</text>
+<rect x="40" y="130" width="180" height="60" fill="#cce5ff" stroke="#444" stroke-width="1"/>
+<text x="130" y="168" text-anchor="middle" class="lbl-sm">chunk 1</text>
+<rect x="220" y="130" width="180" height="60" fill="#f8d7da" stroke="#444" stroke-width="1"/>
+<text x="310" y="168" text-anchor="middle" class="lbl-sm">chunk 2</text>
+<rect x="400" y="130" width="180" height="60" fill="#f8d7da" stroke="#444" stroke-width="1"/>
+<text x="490" y="168" text-anchor="middle" class="lbl-sm">chunk 3</text>
+<rect x="580" y="130" width="180" height="60" fill="#f8d7da" stroke="#444" stroke-width="1"/>
+<text x="670" y="168" text-anchor="middle" class="lbl-sm">chunk 4</text>
+<rect x="760" y="130" width="120" height="60" fill="#cce5ff" stroke="#444" stroke-width="1"/>
+<text x="820" y="168" text-anchor="middle" class="lbl-sm">chunk 5</text>
+<rect x="270" y="128" width="380" height="64" fill="none" stroke="#d62728" stroke-width="2.4" stroke-dasharray="8 4"/>
+<text x="460" y="218" text-anchor="middle" font-size="12" fill="#d62728" font-weight="bold">[[CRITICAL: Trade Cancel Steps 1..5]] split across 3 chunks ✗</text>
+<text x="40" y="270" class="lbl-h" fill="#2ca02c">✓  Critical-aware chunker</text>
+<rect x="40" y="300" width="180" height="60" fill="#cce5ff" stroke="#444"/>
+<text x="130" y="338" text-anchor="middle" class="lbl-sm">chunk 1</text>
+<rect x="220" y="300" width="50" height="60" fill="#cce5ff" stroke="#444"/>
+<text x="245" y="338" text-anchor="middle" class="lbl-sm">c2</text>
+<rect x="270" y="295" width="380" height="70" fill="#f8d7da" stroke="#d62728" stroke-width="2.4"/>
+<text x="460" y="325" text-anchor="middle" class="lbl-h" fill="#d62728">⚠ ATOMIC critical chunk</text>
+<text x="460" y="348" text-anchor="middle" class="lbl-sm">all 5 steps together  ·  markers stripped</text>
+<rect x="650" y="300" width="120" height="60" fill="#cce5ff" stroke="#444"/>
+<text x="710" y="338" text-anchor="middle" class="lbl-sm">c3</text>
+<rect x="770" y="300" width="110" height="60" fill="#cce5ff" stroke="#444"/>
+<text x="825" y="338" text-anchor="middle" class="lbl-sm">c4</text>
+<text x="460" y="405" text-anchor="middle" class="lbl">Boundary [s, e) expanded to [min(s, B.start), max(e, B.end)) when overlapping any critical span B.</text>
+<text x="460" y="425" text-anchor="middle" class="lbl-sm" fill="#666">Result: 100% block-completeness when retrieved (measured: 10/10).</text>
+</svg>

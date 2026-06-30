@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" width="1100" height="580" font-family="Inter,Segoe UI,Arial,sans-serif">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#faf9f6"/>
+    <stop offset="1" stop-color="#eef1ea"/>
+  </linearGradient>
+</defs><rect width="1100" height="580" fill="url(#bg)"/><rect width="1100" height="580" fill="#faf9f6"/><rect x="370" y="170" width="360" height="280" rx="14" fill="#ffffff" stroke="#e4e1d8"/><text x="550" y="218" font-size="20" font-weight="700" fill="#21241f" text-anchor="middle">VedaX KM Agent</text><text x="550" y="244" font-size="13" fill="#6b6f64" text-anchor="middle">Sign in with LDAP / Keycloak</text><text x="400" y="280" font-size="11" fill="#6b6f64">USERNAME</text><rect x="400" y="288" width="300" height="36" rx="6" fill="#faf9f6" stroke="#e4e1d8"/><text x="400" y="345" font-size="11" fill="#6b6f64">PASSWORD</text><rect x="400" y="353" width="300" height="36" rx="6" fill="#faf9f6" stroke="#e4e1d8"/><rect x="400" y="405" width="300" height="38" rx="8" fill="#4a5d4e"/><text x="550" y="430" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Sign in</text></svg>

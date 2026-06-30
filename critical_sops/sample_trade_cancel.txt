@@ -1,0 +1,13 @@
+Trade Cancel Procedure (sample — replace with your own SOP)
+
+Trigger: counterparty default flagged before T+1 settlement.
+
+Step 1: Freeze the settlement queue for the affected ISIN.
+Step 2: Notify the risk desk on the dedicated escalation line.
+Step 3: Obtain dual approval from CRO and CFO (written, time-stamped).
+Step 4: Reverse the trade in NDS-OM with reason code R-15.
+Step 5: File the regulatory incident report within 60 minutes.
+Step 6: Notify counterparty in writing within 2 business hours.
+
+If any step is skipped or out of order, treat as a Sev-1 incident
+and escalate per the IRP runbook.

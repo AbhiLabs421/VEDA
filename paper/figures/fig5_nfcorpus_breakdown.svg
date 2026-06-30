@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="820" height="500" fill="#fafafa"/>
+<text x="410" y="28" text-anchor="middle" class="lbl-big">NFCorpus full breakdown — every stage adds value</text>
+<text x="410" y="48" text-anchor="middle" class="lbl-sm">Each VEDA-X component is independently superior to the corresponding baseline</text>
+<line x1="110" y1="380" x2="770" y2="380" class="grid"/>
+<text x="102" y="384" text-anchor="end" class="lbl-sm">0.00</text>
+<line x1="110" y1="310" x2="770" y2="310" class="grid"/>
+<text x="102" y="314" text-anchor="end" class="lbl-sm">0.15</text>
+<line x1="110" y1="240" x2="770" y2="240" class="grid"/>
+<text x="102" y="244" text-anchor="end" class="lbl-sm">0.30</text>
+<line x1="110" y1="170" x2="770" y2="170" class="grid"/>
+<text x="102" y="174" text-anchor="end" class="lbl-sm">0.45</text>
+<line x1="110" y1="100" x2="770" y2="100" class="grid"/>
+<text x="102" y="104" text-anchor="end" class="lbl-sm">0.60</text>
+<line x1="110" y1="90" x2="110" y2="380" class="axis"/>
+<line x1="110" y1="380" x2="770" y2="380" class="axis"/>
+<rect x="157" y="238" width="13" height="142" fill="url(#gblue)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="163" y="235" text-anchor="middle" font-size="8" font-weight="bold">0.306</text>
+<rect x="172" y="270" width="13" height="110" fill="url(#ggreen)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="178" y="267" text-anchor="middle" font-size="8" font-weight="bold">0.238</text>
+<rect x="187" y="143" width="13" height="237" fill="url(#gorange)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="193" y="140" text-anchor="middle" font-size="8" font-weight="bold">0.508</text>
+<text x="176" y="402" text-anchor="middle" class="lbl-tiny" fill="#222">BM25</text>
+<rect x="289" y="231" width="13" height="149" fill="url(#gblue)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="295" y="228" text-anchor="middle" font-size="8" font-weight="bold">0.320</text>
+<rect x="304" y="234" width="13" height="146" fill="url(#ggreen)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="310" y="231" text-anchor="middle" font-size="8" font-weight="bold">0.315</text>
+<rect x="319" y="143" width="13" height="237" fill="url(#gorange)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="325" y="140" text-anchor="middle" font-size="8" font-weight="bold">0.509</text>
+<text x="308" y="402" text-anchor="middle" class="lbl-tiny" fill="#222">MiniLM dense</text>
+<text x="308" y="415" text-anchor="middle" class="lbl-tiny" fill="#222">(RAG)</text>
+<rect x="421" y="225" width="13" height="155" fill="url(#gblue)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="427" y="222" text-anchor="middle" font-size="8" font-weight="bold">0.333</text>
+<rect x="436" y="243" width="13" height="137" fill="url(#ggreen)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="442" y="240" text-anchor="middle" font-size="8" font-weight="bold">0.295</text>
+<rect x="451" y="139" width="13" height="241" fill="url(#gorange)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="457" y="136" text-anchor="middle" font-size="8" font-weight="bold">0.517</text>
+<text x="440" y="402" text-anchor="middle" class="lbl-tiny" fill="#222">BM25 +</text>
+<text x="440" y="415" text-anchor="middle" class="lbl-tiny" fill="#222">HD expansion</text>
+<rect x="553" y="219" width="13" height="161" fill="url(#gblue)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="559" y="216" text-anchor="middle" font-size="8" font-weight="bold">0.345</text>
+<rect x="568" y="222" width="13" height="158" fill="url(#ggreen)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="574" y="219" text-anchor="middle" font-size="8" font-weight="bold">0.339</text>
+<rect x="583" y="137" width="13" height="243" fill="url(#gorange)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="589" y="134" text-anchor="middle" font-size="8" font-weight="bold">0.522</text>
+<text x="572" y="402" text-anchor="middle" class="lbl-tiny" fill="#222">Dense +</text>
+<text x="572" y="415" text-anchor="middle" class="lbl-tiny" fill="#222">PRF</text>
+<rect x="685" y="216" width="13" height="164" fill="url(#gblue)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="691" y="213" text-anchor="middle" font-size="8" font-weight="bold">0.352</text>
+<rect x="700" y="222" width="13" height="158" fill="url(#ggreen)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="706" y="219" text-anchor="middle" font-size="8" font-weight="bold">0.339</text>
+<rect x="715" y="130" width="13" height="250" fill="url(#gorange)" stroke="#333" stroke-width="0.6" rx="1"/>
+<text x="721" y="127" text-anchor="middle" font-size="8" font-weight="bold">0.538</text>
+<text x="704" y="402" text-anchor="middle" class="lbl-tiny" fill="#222">VEDA-X (full</text>
+<text x="704" y="415" text-anchor="middle" class="lbl-tiny" fill="#222">fusion)</text>
+<text x="704" y="440" text-anchor="middle" class="lbl-sm" fill="#2ca02c" font-weight="bold">★ winner</text>
+<rect x="550" y="105" width="12" height="12" fill="url(#gblue)"/>
+<text x="566" y="116" class="lbl-sm">nDCG@10</text>
+<rect x="625" y="105" width="12" height="12" fill="url(#ggreen)"/>
+<text x="641" y="116" class="lbl-sm">Recall@100</text>
+<rect x="700" y="105" width="12" height="12" fill="url(#gorange)"/>
+<text x="716" y="116" class="lbl-sm">MRR@10</text>
+<text x="410" y="465" text-anchor="middle" class="lbl-sm">Reading: HD expansion alone already beats BM25 baseline (0.3062 → 0.3330).  Full fusion reaches 0.3522.</text>
+<text x="410" y="483" text-anchor="middle" class="lbl-sm" fill="#666">Reproduce: python -m eval.run_eval bm25 dense veda_x hybrid</text>
+</svg>

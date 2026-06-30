@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" width="620" height="540" font-family="Helvetica, Arial, sans-serif">
+<title></title>
+<style>
+  .lbl{font-size:13px;fill:#222}
+  .lbl-sm{font-size:11px;fill:#444}
+  .lbl-tiny{font-size:9px;fill:#666}
+  .lbl-big{font-size:17px;fill:#111;font-weight:bold}
+  .lbl-h{font-size:14px;fill:#111;font-weight:bold}
+  .box{stroke:#333;stroke-width:1.2}
+  .axis{stroke:#444;stroke-width:1}
+  .grid{stroke:#ddd;stroke-width:0.5;stroke-dasharray:3 3}
+  .mono{font-family:Courier New, monospace;font-size:11px;fill:#222}
+  .mono-sm{font-family:Courier New, monospace;font-size:10px;fill:#333}
+</style>
+<defs>
+  <linearGradient id="gblue" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1f77b4" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#08306b" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="ggreen" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#2ca02c" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#1b5e20" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gorange" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ff7f0e" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#bf5f00" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gred" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d62728" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="gpurple" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9467bd" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="#4a148c" stop-opacity="0.9"/>
+  </linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/></marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f77b4"/></marker>
+</defs>
+<rect width="620" height="540" fill="#fafafa"/>
+<text x="310" y="28" text-anchor="middle" class="lbl-big">L1.5 Semantic guardrail — centroid separation</text>
+<text x="310" y="48" text-anchor="middle" class="lbl-sm">Each point = one query.  Decision: block if attack-sim ≥ 0.20 AND margin ≥ 0.12.</text>
+<line x1="70" y1="440" x2="550" y2="440" class="axis"/>
+<line x1="70" y1="440" x2="70" y2="100" class="axis"/>
+<line x1="70" y1="440" x2="70" y2="100" class="grid"/>
+<line x1="70" y1="440" x2="550" y2="440" class="grid"/>
+<text x="70" y="455" text-anchor="middle" class="lbl-tiny">0.0</text>
+<text x="64" y="444" text-anchor="end" class="lbl-tiny">0.0</text>
+<line x1="150" y1="440" x2="150" y2="100" class="grid"/>
+<line x1="70" y1="372" x2="550" y2="372" class="grid"/>
+<text x="150" y="455" text-anchor="middle" class="lbl-tiny">0.1</text>
+<text x="64" y="376" text-anchor="end" class="lbl-tiny">0.1</text>
+<line x1="230" y1="440" x2="230" y2="100" class="grid"/>
+<line x1="70" y1="304" x2="550" y2="304" class="grid"/>
+<text x="230" y="455" text-anchor="middle" class="lbl-tiny">0.2</text>
+<text x="64" y="308" text-anchor="end" class="lbl-tiny">0.2</text>
+<line x1="310" y1="440" x2="310" y2="100" class="grid"/>
+<line x1="70" y1="236" x2="550" y2="236" class="grid"/>
+<text x="310" y="455" text-anchor="middle" class="lbl-tiny">0.3</text>
+<text x="64" y="240" text-anchor="end" class="lbl-tiny">0.3</text>
+<line x1="390" y1="440" x2="390" y2="100" class="grid"/>
+<line x1="70" y1="168" x2="550" y2="168" class="grid"/>
+<text x="390" y="455" text-anchor="middle" class="lbl-tiny">0.4</text>
+<text x="64" y="172" text-anchor="end" class="lbl-tiny">0.4</text>
+<line x1="470" y1="440" x2="470" y2="100" class="grid"/>
+<line x1="70" y1="100" x2="550" y2="100" class="grid"/>
+<text x="470" y="455" text-anchor="middle" class="lbl-tiny">0.5</text>
+<text x="64" y="104" text-anchor="end" class="lbl-tiny">0.5</text>
+<line x1="550" y1="440" x2="550" y2="100" class="grid"/>
+<line x1="70" y1="32" x2="550" y2="32" class="grid"/>
+<text x="550" y="455" text-anchor="middle" class="lbl-tiny">0.6</text>
+<text x="310" y="478" text-anchor="middle" class="lbl-sm">cos(query, attack centroid)</text>
+<text transform="rotate(-90,26,270)" x="26" y="270" text-anchor="middle" class="lbl-sm">cos(query, legit centroid)</text>
+<line x1="230" y1="100" x2="230" y2="440" stroke="#d62728" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="235" y="108" fill="#d62728" font-size="10">τ_abs = 0.20</text>
+<rect x="230" y="100" width="320" height="340" fill="#d62728" opacity="0.06"/>
+<circle cx="430" cy="413" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="486" cy="393" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="374" cy="372" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="558" cy="400" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="398" cy="359" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="462" cy="379" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="510" cy="406" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="534" cy="386" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="414" cy="366" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="470" cy="400" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="446" cy="379" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="390" cy="372" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="518" cy="393" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="438" cy="386" r="6" fill="#d62728" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="104,228 116,228 110,216" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="128,187 140,187 134,175" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="96,167 108,167 102,155" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="112,201 124,201 118,189" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="120,173 132,173 126,161" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="136,214 148,214 142,202" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="104,180 116,180 110,168" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="128,160 140,160 134,148" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="112,194 124,194 118,182" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="144,208 156,208 150,196" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="120,173 132,173 126,161" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="104,221 116,221 110,209" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="128,187 140,187 134,175" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="112,167 124,167 118,155" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<polygon points="120,201 132,201 126,189" fill="#2ca02c" stroke="#222" stroke-width="0.6" opacity="0.85"/>
+<circle cx="400" cy="80" r="6" fill="#d62728"/>
+<text x="412" y="84" class="lbl-sm">attack paraphrases (n=14)</text>
+<polygon points="394,103 406,103 400,92" fill="#2ca02c"/>
+<text x="412" y="105" class="lbl-sm">legitimate queries (n=15)</text>
+<text x="310" y="500" text-anchor="middle" class="lbl-sm">Clean separation drives 100% catch / 0% false-positive.  Contrastive legit centroid is the key.</text>
+</svg>
